@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Come hOMe To Your Medicine — Medicine Women Collective</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black: #0c0b09;
+  --charcoal: #1a1814;
+  --cream: #f5efe3;
+  --cream-mid: #ebe2cc;
+  --cream-deep: #ddd1b8;
+  --gold: #b8913a;
+  --gold-light: #d4a84b;
+  --gold-pale: #e8d090;
+  --gold-dark: #8a6820;
+  --rose: #c4826a;
+  --rose-light: #d9a090;
+  --sage: #6b7c61;
+  --sage-light: #8fa07f;
+  --sage-pale: #c4d4b0;
+  --sage-deep: #3a5030;
+  --forest: #243320;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Jost', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  color: var(--cream);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+
+/* ───── UTILITY ───── */
+.gold { color: var(--gold-light); }
+.sage { color: var(--sage-light); }
+.rose { color: var(--rose-light); }
+.italic { font-style: italic; }
+
+.ornament {
+  display: flex; align-items: center; justify-content: center;
+  gap: 16px; margin: 0 auto;
+}
+.ornament-line { flex: 1; max-width: 100px; height: 0.5px; background: var(--gold); opacity: 0.45; }
+.ornament-dot { width: 5px; height: 5px; background: var(--rose); transform: rotate(45deg); flex-shrink: 0; }
+
+.section-eyebrow {
+  display: block;
+  font-family: var(--font-sans);
+  font-weight: 200;
+  font-size: 10px;
+  letter-spacing: 0.55em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 18px;
+}
+
+/* ───── NAV ───── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 20px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: linear-gradient(to bottom, rgba(12,11,9,0.95) 0%, transparent 100%);
+  backdrop-filter: blur(2px);
+}
+.nav-logo {
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--cream);
+  text-decoration: none;
+}
+.nav-logo span { color: var(--gold-light); font-style: italic; }
+.nav-cta {
+  display: inline-block;
+  padding: 10px 28px;
+  border: 0.5px solid var(--gold);
+  color: var(--gold-light);
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.nav-cta:hover { background: rgba(184,145,58,0.12); }
+
+/* ───── HERO ───── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  padding: 120px 40px 100px;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?w=1800&q=80');
+  background-size: cover;
+  background-position: center 20%;
+  opacity: 0.22;
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 55%, rgba(12,11,9,0.1) 0%, rgba(12,11,9,0.92) 80%);
+}
+.hero-topline {
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--gold-dark) 25%, var(--gold-light) 50%, var(--rose) 65%, var(--gold-dark) 80%, transparent 100%);
+}
+.hero-content { position: relative; z-index: 2; max-width: 900px; }
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 14px;
+  font-family: var(--font-sans); font-weight: 200; font-size: 10px;
+  letter-spacing: 0.5em; text-transform: uppercase; color: var(--gold-light);
+  margin-bottom: 36px;
+}
+.hero-badge::before, .hero-badge::after {
+  content: ''; display: block; width: 36px; height: 0.5px; background: var(--gold); opacity: 0.55;
+}
+
+.hero h1 {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: clamp(58px, 10vw, 120px);
+  line-height: 0.88;
+  color: var(--cream);
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+}
+.hero h1 em { font-style: italic; color: var(--gold-light); display: block; }
+.hero h1 .small-word { font-size: 0.55em; letter-spacing: 0.1em; font-weight: 300; display: block; margin-bottom: 8px; color: var(--cream-mid); }
+
+.hero-subtitle {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(18px, 2.5vw, 26px);
+  color: var(--cream-mid);
+  max-width: 560px;
+  margin: 28px auto 52px;
+  line-height: 1.55;
+  opacity: 0.88;
+}
+
+.hero-details {
+  display: flex; align-items: center; justify-content: center;
+  gap: 0; flex-wrap: wrap; margin-bottom: 52px;
+}
+.hero-detail-item {
+  font-family: var(--font-sans); font-size: 10px; font-weight: 300;
+  letter-spacing: 0.3em; text-transform: uppercase; color: var(--cream-deep);
+  padding: 0 28px;
+}
+.hero-detail-item:not(:last-child) { border-right: 0.5px solid rgba(184,145,58,0.35); }
+
+.btn-primary {
+  display: inline-block;
+  padding: 20px 60px;
+  background: var(--gold);
+  color: var(--black);
+  font-family: var(--font-sans);
+  font-weight: 400; font-size: 11px;
+  letter-spacing: 0.35em; text-transform: uppercase;
+  text-decoration: none; border: none; cursor: pointer;
+  transition: all 0.35s ease;
+}
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+.btn-ghost {
+  display: inline-block;
+  padding: 18px 52px;
+  border: 0.5px solid rgba(184,145,58,0.5);
+  color: var(--gold-light);
+  font-family: var(--font-sans);
+  font-size: 11px; font-weight: 300;
+  letter-spacing: 0.35em; text-transform: uppercase;
+  text-decoration: none; cursor: pointer;
+  transition: all 0.3s;
+  background: transparent;
+}
+.btn-ghost:hover { background: rgba(184,145,58,0.1); border-color: var(--gold); }
+
+.hero-scroll {
+  position: absolute; bottom: 44px; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 10px; opacity: 0.35;
+}
+.hero-scroll span { font-size: 9px; letter-spacing: 0.45em; text-transform: uppercase; color: var(--gold); }
+.scroll-bar { width: 0.5px; height: 52px; background: linear-gradient(to bottom, var(--gold), transparent); animation: pulse 2.2s ease-in-out infinite; }
+@keyframes pulse { 0%,100%{opacity:0.3;} 50%{opacity:1;} }
+
+/* ───── PAIN MIRROR ───── */
+.pain-section {
+  background: var(--cream);
+  color: var(--black);
+  padding: 110px 40px;
+}
+.pain-section .inner { max-width: 880px; margin: 0 auto; text-align: center; }
+
+.pain-section h2 {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: clamp(40px, 5.5vw, 68px);
+  line-height: 1.05;
+  color: var(--black);
+  margin-bottom: 28px;
+}
+.pain-section h2 em { font-style: italic; color: var(--sage-deep); }
+
+.pain-lead {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(18px, 2.4vw, 24px);
+  color: #3a3028;
+  line-height: 1.65;
+  max-width: 700px;
+  margin: 0 auto 56px;
+}
+
+.pain-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1px;
+  background: #c8bfaa;
+  margin: 0 0 56px;
+  text-align: left;
+}
+.pain-item {
+  background: var(--cream-mid);
+  padding: 36px 32px;
+  position: relative;
+}
+.pain-item::before {
+  content: '';
+  display: block; width: 24px; height: 1px;
+  background: var(--rose); margin-bottom: 14px;
+}
+.pain-item p {
+  font-family: var(--font-serif); font-style: italic;
+  font-size: 17px; color: #2e2820; line-height: 1.65;
+}
+
+.pain-truth {
+  font-family: var(--font-sans); font-size: 15px; font-weight: 300;
+  color: #4a4035; line-height: 1.95; max-width: 660px; margin: 0 auto;
+}
+.pain-truth strong { font-weight: 500; color: var(--sage-deep); }
+
+/* ───── QUOTE BREAK ───── */
+.quote-break {
+  position: relative; height: 460px;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.quote-bg {
+  position: absolute; inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=1600&q=80');
+  background-size: cover; background-position: center 40%;
+}
+.quote-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(12,11,9,0.9) 0%, rgba(12,11,9,0.55) 60%, rgba(36,51,32,0.8) 100%);
+}
+.quote-content { position: relative; z-index: 2; text-align: center; padding: 0 40px; }
+.quote-content blockquote {
+  font-family: var(--font-serif); font-style: italic; font-weight: 300;
+  font-size: clamp(28px, 4.5vw, 54px);
+  color: var(--cream); line-height: 1.2; max-width: 780px; margin: 0 auto 22px;
+}
+.quote-content cite {
+  font-family: var(--font-sans); font-style: normal; font-weight: 200;
+  font-size: 10px; letter-spacing: 0.5em; text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+/* ───── OUTCOMES ───── */
+.outcomes-section {
+  background: var(--black); padding: 120px 40px;
+}
+.outcomes-section .inner { max-width: 900px; margin: 0 auto; text-align: center; }
+
+.outcomes-section h2 {
+  font-family: var(--font-serif); font-weight: 300;
+  font-size: clamp(40px, 6vw, 72px);
+  line-height: 1.0; color: var(--cream); margin-bottom: 20px;
+}
+.outcomes-section h2 em { font-style: italic; color: var(--gold-light); }
+
+.outcomes-lead {
+  font-family: var(--font-serif); font-style: italic;
+  font-size: clamp(17px, 2.2vw, 21px); color: var(--cream-mid);
+  max-width: 600px; margin: 0 auto 70px; opacity: 0.82; line-height: 1.6;
+}
+
+.outcomes-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 16px; text-align: left; margin-bottom: 64px;
+}
+.outcome-card {
+  position: relative;
+  background: rgba(245,239,227,0.035);
+  border: 0.5px solid rgba(184,145,58,0.2);
+  padding: 38px 36px 34px;
+  transition: border-color 0.4s, background 0.4s;
+  overflow: hidden;
+}
+.outcome-card:hover {
+  border-color: rgba(184,145,58,0.5);
+  background: rgba(245,239,227,0.055);
+}
+.outcome-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(184,145,58,0.5), transparent);
+  opacity: 0; transition: opacity 0.4s;
+}
+.outcome-card:hover::before { opacity: 1; }
+
+.outcome-num {
+  font-family: var(--font-serif); font-size: 64px; font-weight: 300;
+  color: rgba(184,145,58,0.08); line-height: 1;
+  position: absolute; top: 12px; right: 20px;
+}
+.outcome-title {
+  font-family: var(--font-serif); font-size: 24px; font-weight: 400;
+  color: var(--gold-light); margin-bottom: 10px; line-height: 1.25;
+}
+.outcome-body {
+  font-family: var(--font-sans); font-size: 13.5px; font-weight: 300;
+  color: rgba(245,239,227,0.68); line-height: 1.85;
+}
+
+/* ───── PHOTO STRIP ───── */
+.photo-strip {
+  display: grid; grid-template-columns: 1fr 1.5fr 1fr;
+  gap: 3px; height: 480px;
+}
+.photo-cell {
+  background-size: cover; background-position: center;
+  position: relative; overflow: hidden;
+}
+.photo-cell::after {
+  content: ''; position: absolute; inset: 0;
+  background: rgba(12,11,9,0.22); transition: opacity 0.5s;
+}
+.photo-cell:hover::after { opacity: 0; }
+.photo-cell:nth-child(1) { background-image: url('https://images.unsplash.com/photo-1588286840104-8957b019727f?w=800&q=80'); }
+.photo-cell:nth-child(2) { background-image: url('https://images.unsplash.com/photo-1542379653-b926a529191d?w=1000&q=80'); background-position: center 30%; }
+.photo-cell:nth-child(3) { background-image: url('https://images.unsplash.com/photo-1573220606872-05de54699f0d?w=800&q=80'); }
+
+/* ───── RETREAT DETAILS ───── */
+.details-section {
+  background: var(--charcoal); padding: 120px 40px;
+}
+.details-section .inner { max-width: 900px; margin: 0 auto; }
+.details-header { text-align: center; margin-bottom: 72px; }
+.details-header h2 {
+  font-family: var(--font-serif); font-weight: 300;
+  font-size: clamp(38px, 5vw, 60px);
+  color: var(--cream); line-height: 1.1; margin-bottom: 16px;
+}
+.details-header h2 em { font-style: italic; color: var(--sage-light); }
+.details-header p {
+  font-family: var(--font-serif); font-style: italic;
+  font-size: 19px; color: var(--cream-mid); opacity: 0.78; max-width: 560px; margin: 0 auto;
+}
+
+.included-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0; border: 0.5px solid rgba(245,239,227,0.1);
+}
+.included-item {
+  padding: 28px 32px;
+  border-bottom: 0.5px solid rgba(245,239,227,0.08);
+  border-right: 0.5px solid rgba(245,239,227,0.08);
+  display: flex; gap: 18px; align-items: flex-start;
+}
+.included-item:nth-child(even) { border-right: none; }
+
+.included-dot {
+  flex-shrink: 0; width: 6px; height: 6px;
+  background: var(--gold); transform: rotate(45deg); margin-top: 8px;
+}
+.included-item h4 {
+  font-family: var(--font-serif); font-size: 18px; font-weight: 400;
+  color: var(--gold-pale); margin-bottom: 4px;
+}
+.included-item p {
+  font-family: var(--font-sans); font-size: 13px; font-weight: 300;
+  color: rgba(245,239,227,0.6); line-height: 1.75;
+}
+
+/* ───── SCHEDULE ───── */
+.schedule-section { background: var(--black); padding: 100px 40px; }
+.schedule-section .inner { max-width: 760px; margin: 0 auto; text-align: center; }
+.schedule-section h2 {
+  font-family: var(--font-serif); font-weight: 300;
+  font-size: clamp(36px, 4.5vw, 56px);
+  color: var(--cream); margin-bottom: 60px; line-height: 1.1;
+}
+.schedule-section h2 em { font-style: italic; color: var(--gold-light); }
+
+.schedule-item {
+  display: flex; gap: 32px; align-items: flex-start;
+  text-align: left; margin-bottom: 0;
+  position: relative;
+}
+.schedule-item:not(:last-child)::after {
+  content: ''; position: absolute;
+  left: 19px; top: 42px; bottom: -1px; width: 0.5px;
+  background: linear-gradient(to bottom, rgba(184,145,58,0.4), rgba(184,145,58,0.1));
+}
+
+.schedule-marker {
+  flex-shrink: 0; display: flex; flex-direction: column; align-items: center; padding-top: 4px;
+}
+.schedule-circle {
+  width: 40px; height: 40px; border: 0.5px solid var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-sans); font-size: 10px; font-weight: 300;
+  letter-spacing: 0.05em; color: var(--gold-light);
+  background: rgba(184,145,58,0.06); flex-shrink: 0;
+}
+.schedule-body { padding: 0 0 48px; }
+.schedule-date {
+  font-family: var(--font-sans); font-size: 10px; font-weight: 200;
+  letter-spacing: 0.4em; text-transform: uppercase;
+  color: var(--sage-light); margin-bottom: 6px;
+}
+.schedule-title {
+  font-family: var(--font-serif); font-size: 22px; font-weight: 400;
+  color: var(--cream); margin-bottom: 10px;
+}
+.schedule-desc {
+  font-family: var(--font-sans); font-size: 13.5px; font-weight: 300;
+  color: rgba(245,239,227,0.62); line-height: 1.85;
+}
+
+/* ───── LOCATION ───── */
+.location-section { background: var(--cream); color: var(--black); padding: 0; }
+.location-top {
+  display: grid; grid-template-columns: 1fr 1fr;
+  min-height: 560px;
+}
+.location-img {
+  background-image: url('https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=900&q=80');
+  background-size: cover; background-position: center;
+}
+.location-copy {
+  padding: 72px 60px;
+  background: var(--cream);
+}
+.location-copy h2 {
+  font-family: var(--font-serif); font-weight: 300;
+  font-size: clamp(36px, 4vw, 52px); line-height: 1.1;
+  color: var(--black); margin-bottom: 20px;
+}
+.location-copy h2 em { font-style: italic; color: var(--sage-deep); }
+.location-copy p {
+  font-family: var(--font-sans); font-size: 14.5px; font-weight: 300;
+  color: #3a3028; line-height: 1.9; margin-bottom: 16px;
+}
+.location-copy p strong { font-weight: 500; color: var(--forest); }
+
+.location-features {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px;
+}
+.loc-tag {
+  font-family: var(--font-sans); font-size: 10px; font-weight: 300;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  padding: 8px 18px; border: 0.5px solid var(--sage);
+  color: var(--sage-deep);
+}
+
+/* ───── TESTIMONIALS ───── */
+.testimonials-section { background: var(--charcoal); padding: 120px 40px; }
+.testimonials-section .inner { max-width: 1000px; margin: 0 auto; }
+.testimonials-header { text-align: center; margin-bottom: 72px; }
+.testimonials-header h2 {
+  font-family: var(--font-serif); font-weight: 300;
+  font-size: clamp(36px, 4.5vw, 56px);
+  color: var(--cream); line-height: 1.1;
+}
+.testimonials-header h2 em { font-style: italic; color: var(--rose-light); }
+
+.testimonials-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+.testimonial-card {
+  background: rgba(245,239,227,0.04);
+  border: 0.5px solid rgba(245,239,227,0.1);
+  padding: 40px 32px;
+  position: relative;
+}
+.testimonial-card::before {
+  content: '"';
+  font-family: var(--font-serif); font-size: 80px; font-weight: 300;
+  color: rgba(196,130,106,0.2); line-height: 1;
+  position: absolute; top: 14px; left: 22px;
+}
+.testimonial-body {
+  font-family: var(--font-serif); font-style: italic;
+  font-size: 15.5px; color: var(--cream-mid);
+  line-height: 1.75; margin-bottom: 28px; position: relative; z-index: 1;
+}
+.testimonial-name {
+  font-family: var(--font-sans); font-size: 11px; font-weight: 400;
+  letter-spacing: 0.25em; text-transform: uppercase; color: var(--rose-light);
+}
+.testimonial-tag {
+  font-family: var(--font-sans); font-size: 11px; font-weight: 200;
+  color: rgba(245,239,227,0.4); margin-top: 3px;
+}
+
+/* ───── MEET HOSTS ───── */
+.hosts-section { background: var(--cream); color: var(--black); padding: 120px 40px; }
+.hosts-section .inner { max-width: 880px; margin: 0 auto; text-align: center; }
+.hosts-section h2 {
+  font-family: var(--font-serif); font-weight: 300;
+  font-size: clamp(38px, 5vw, 60px); line-height: 1.1;
+  color: var(--black); margin-bottom: 16px;
+}
+.hosts-section h2 em { font-style: italic; color: var(--sage-deep); }
+.hosts-lead {
+  font-family: var(--font-serif); font-style: italic;
+  font-size: 18px; color: #4a4035; line-height: 1.65;
+  max-width: 560px; margin: 0 auto 72px; opacity: 0.8;
+}
+
+.hosts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; text-align: left; }
+.host-card { position: relative; }
+.host-img {
+  width: 100%; aspect-ratio: 3/4;
+  background-size: cover; background-position: center top;
+  margin-bottom: 24px;
+  position: relative; overflow: hidden;
+}
+.host-img::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(12,11,9,0.15) 100%);
+}
+.host-img:nth-child(1) { background-image: url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&q=80'); }
+
+.host-name {
+  font-family: var(--font-serif); font-size: 28px; font-weight: 400;
+  color: var(--black); margin-bottom: 6px;
+}
+.host-title {
+  font-family: var(--font-sans); font-size: 10px; font-weight: 300;
+  letter-spacing: 0.35em; text-transform: uppercase;
+  color: var(--sage); margin-bottom: 14px;
+}
+.host-bio {
+  font-family: var(--font-sans); font-size: 13.5px; font-weight: 300;
+  color: #4a4035; line-height: 1.85;
+}
+
+/* ───── PRICING ───── */
+.pricing-section { background: var(--black); padding: 120px 40px; }
+.pricing-section .inner { max-width: 700px; margin: 0 auto; text-align: center; }
+.pricing-section h2 {
+  font-family: var(--font-serif); font-weight: 300;
+  font-size: clamp(38px, 5.5vw, 66px); line-height: 1.05;
+  color: var(--cream); margin-bottom: 20px;
+}
+.pricing-section h2 em { font-style: italic; color: var(--gold-light); }
+.pricing-sub {
+  font-family: var(--font-serif); font-style: italic; font-size: 19px;
+  color: var(--cream-mid); opacity: 0.78; margin-bottom: 56px; line-height: 1.55;
+}
+
+.price-box {
+  border: 0.5px solid rgba(184,145,58,0.35);
+  padding: 56px 48px;
+  position: relative;
+  background: rgba(245,239,227,0.03);
+  margin-bottom: 32px;
+}
+.price-box::before {
+  content: ''; position: absolute;
+  top: 0; left: 10%; right: 10%; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), var(--rose), var(--gold), transparent);
+}
+.price-tag {
+  font-family: var(--font-serif); font-size: clamp(52px, 8vw, 84px);
+  font-weight: 300; color: var(--gold-light); line-height: 1; margin-bottom: 8px;
+}
+.price-note {
+  font-family: var(--font-sans); font-size: 11px; font-weight: 300;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: rgba(245,239,227,0.5); margin-bottom: 36px;
+}
+.price-includes {
+  list-style: none; text-align: left;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px 32px;
+}
+.price-includes li {
+  font-family: var(--font-sans); font-size: 13px; font-weight: 300;
+  color: rgba(245,239,227,0.7); line-height: 1.5;
+  display: flex; gap: 10px; align-items: flex-start;
+}
+.price-includes li::before {
+  content: ''; flex-shrink: 0; width: 4px; height: 4px;
+  background: var(--gold); transform: rotate(45deg); margin-top: 7px;
+}
+
+.price-spots {
+  font-family: var(--font-sans); font-size: 11px; font-weight: 300;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--rose-light); margin-bottom: 40px;
+}
+
+.bonus-box {
+  border: 0.5px solid rgba(107,124,97,0.4);
+  padding: 36px 40px; margin-bottom: 48px; text-align: left;
+  background: rgba(107,124,97,0.05);
+}
+.bonus-label {
+  font-family: var(--font-sans); font-size: 10px; font-weight: 200;
+  letter-spacing: 0.45em; text-transform: uppercase;
+  color: var(--sage-light); margin-bottom: 14px;
+}
+.bonus-title {
+  font-family: var(--font-serif); font-size: 22px; font-weight: 400;
+  color: var(--cream); margin-bottom: 10px;
+}
+.bonus-desc {
+  font-family: var(--font-sans); font-size: 13.5px; font-weight: 300;
+  color: rgba(245,239,227,0.65); line-height: 1.8;
+}
+
+/* ───── FINAL CTA ───── */
+.cta-section {
+  position: relative; text-align: center; padding: 140px 40px;
+  overflow: hidden;
+}
+.cta-bg {
+  position: absolute; inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80');
+  background-size: cover; background-position: center 35%;
+}
+.cta-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(12,11,9,0.88), rgba(36,51,32,0.85) 100%);
+}
+.cta-content { position: relative; z-index: 2; max-width: 700px; margin: 0 auto; }
+.cta-content h2 {
+  font-family: var(--font-serif); font-weight: 300;
+  font-size: clamp(42px, 6vw, 78px); line-height: 1.05;
+  color: var(--cream); margin-bottom: 20px;
+}
+.cta-content h2 em { font-style: italic; color: var(--gold-light); }
+.cta-content p {
+  font-family: var(--font-serif); font-style: italic;
+  font-size: clamp(17px, 2.4vw, 22px); color: var(--cream-mid);
+  line-height: 1.6; margin-bottom: 48px; opacity: 0.85;
+}
+.cta-btns { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; }
+
+.cta-sub {
+  font-family: var(--font-sans); font-size: 11px; font-weight: 300;
+  letter-spacing: 0.25em; color: rgba(245,239,227,0.45);
+  margin-top: 24px;
+}
+
+/* ───── FOOTER ───── */
+footer {
+  background: var(--black);
+  border-top: 0.5px solid rgba(184,145,58,0.2);
+  padding: 56px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 24px;
+}
+.footer-logo {
+  font-family: var(--font-serif); font-size: 16px; font-weight: 400;
+  letter-spacing: 0.1em; color: var(--cream-deep);
+}
+.footer-logo span { color: var(--gold); font-style: italic; }
+.footer-copy {
+  font-family: var(--font-sans); font-size: 11px; font-weight: 200;
+  letter-spacing: 0.2em; color: rgba(245,239,227,0.3);
+}
+.footer-links {
+  display: flex; gap: 28px;
+}
+.footer-links a {
+  font-family: var(--font-sans); font-size: 10px; font-weight: 300;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: rgba(245,239,227,0.45); text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-links a:hover { color: var(--gold-light); }
+
+/* ───── DIVIDERS ───── */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(184,145,58,0.3) 30%, rgba(196,130,106,0.3) 60%, transparent);
+  margin: 0;
+}
+
+/* ───── ANIMATIONS ───── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-content > * { animation: fadeInUp 0.9s ease both; }
+.hero-badge { animation-delay: 0.1s; }
+.hero h1 { animation-delay: 0.25s; }
+.hero-subtitle { animation-delay: 0.4s; }
+.hero-details { animation-delay: 0.55s; }
+.hero-btns { animation-delay: 0.7s; }
+
+/* ───── RESPONSIVE ───── */
+@media (max-width: 768px) {
+  nav { padding: 18px 24px; }
+  .pain-grid { grid-template-columns: 1fr; }
+  .outcomes-grid { grid-template-columns: 1fr; }
+  .included-grid { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .hosts-grid { grid-template-columns: 1fr; }
+  .price-includes { grid-template-columns: 1fr; }
+  .location-top { grid-template-columns: 1fr; }
+  .location-img { height: 300px; }
+  .photo-strip { grid-template-columns: 1fr; height: auto; }
+  .photo-cell { height: 260px; }
+  footer { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#"><span>Medicine Women</span> Collective</a>
+  <a class="nav-cta" href="https://calendly.com/medicine-women-collective/come-home-retreat-clarity-call" target="_blank">Book a Call</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-topline"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Medicine Women Collective Presents</div>
+    <h1>
+      <span class="small-word">Come</span>
+      <em>hOMe</em>
+    </h1>
+    <p class="hero-subtitle">
+      An 8-day transformative retreat for the woman who has built everything —
+      and is ready to finally come back to herself.
+    </p>
+    <div class="hero-details">
+      <div class="hero-detail-item">Jan 30 – Feb 6, 2027</div>
+      <div class="hero-detail-item">Playa Hermosa, Costa Rica</div>
+      <div class="hero-detail-item">Castle of Oz</div>
+      <div class="hero-detail-item">8 Spots Only</div>
+    </div>
+    <div class="hero-btns">
+      <a class="btn-primary" href="https://calendly.com/medicine-women-collective/come-home-retreat-clarity-call" target="_blank">Reserve My Spot</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-bar"></div>
+  </div>
+</section>
+
+<!-- PAIN MIRROR -->
+<section class="pain-section">
+  <div class="inner">
+    <span class="section-eyebrow" style="color: var(--sage);">We see you</span>
+    <h2>You've built a beautiful life.<br><em>So why does it feel so hollow?</em></h2>
+    <p class="pain-lead">
+      You're competent, capable, accomplished. From the outside, everything looks exactly as it should.
+      But behind closed doors, you're exhausted in a way that sleep can't fix.
+      You've given everything to everyone — and quietly lost yourself in the process.
+    </p>
+    <div class="pain-grid">
+      <div class="pain-item">
+        <p>You feel unseen and unappreciated — even surrounded by people who love you.</p>
+      </div>
+      <div class="pain-item">
+        <p>You're standing at a threshold — a career shift, an empty nest, a marriage that no longer fits — and you don't know who you are on the other side.</p>
+      </div>
+      <div class="pain-item">
+        <p>You want more joy, more peace, more <em>you</em> — but the word "selfish" stops you every single time.</p>
+      </div>
+      <div class="pain-item">
+        <p>You've been the strong one for so long. You've forgotten what it feels like to be held.</p>
+      </div>
+      <div class="pain-item">
+        <p>Success feels like a performance. You want to feel it in your body — not just on your résumé.</p>
+      </div>
+      <div class="pain-item">
+        <p>Deep down you know: you were made for something more. And that calling is getting louder.</p>
+      </div>
+    </div>
+    <p class="pain-truth">
+      You are not broken. You are not too much — or too little. You are a woman at a threshold,
+      and your soul is asking you to <strong>stop performing and start returning.</strong>
+      This retreat was built for exactly this moment in your life.
+    </p>
+  </div>
+</section>
+
+<!-- QUOTE BREAK -->
+<div class="quote-break">
+  <div class="quote-bg"></div>
+  <div class="quote-overlay"></div>
+  <div class="quote-content">
+    <blockquote>
+      "A circle of women can change everything.<br>Together, we remember our power."
+    </blockquote>
+    <cite>— Medicine Women Collective</cite>
+  </div>
+</div>
+
+<!-- OUTCOMES -->
+<section class="outcomes-section">
+  <div class="inner">
+    <span class="section-eyebrow">What you'll walk away with</span>
+    <h2>You will leave<br><em>fundamentally changed.</em></h2>
+    <p class="outcomes-lead">
+      Not in a "felt good for a weekend" kind of way.
+      In a "I finally know who I am and what I'm here for" kind of way.
+    </p>
+    <div class="outcomes-grid">
+      <div class="outcome-card">
+        <div class="outcome-num">01</div>
+        <div class="outcome-title">An Identity Rebirth</div>
+        <p class="outcome-body">You will shed the roles, the labels, and the expectations that have kept you small — and step into an embodied, grounded sense of who you truly are. Not who you've been told to be.</p>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-num">02</div>
+        <div class="outcome-title">Freedom from Old Patterns</div>
+        <p class="outcome-body">Through somatic work, ceremony, and deep coaching, you'll break the cycles that have kept you stuck — people-pleasing, over-giving, shrinking — and replace them with sovereign new ways of being.</p>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-num">03</div>
+        <div class="outcome-title">Clarity on Your Next Chapter</div>
+        <p class="outcome-body">Whether you're navigating a career pivot, a life transition, or simply a profound "what's next?" — you will leave with a clear, felt sense of direction and the confidence to walk it.</p>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-num">04</div>
+        <div class="outcome-title">A Regulated, Embodied Self</div>
+        <p class="outcome-body">Your nervous system will learn a new baseline. You'll have real tools — breathwork, somatic practices, self-care rituals — to sustain transformation long after you leave Costa Rica.</p>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-num">05</div>
+        <div class="outcome-title">Lifelong Sisterhood</div>
+        <p class="outcome-body">There is something irreplaceable about being truly witnessed by other women. You will forge deep, lasting bonds with like-hearted women who see the real you — and celebrate her.</p>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-num">06</div>
+        <div class="outcome-title">Your Medicine, Activated</div>
+        <p class="outcome-body">Every woman carries medicine — her unique gifts, wisdom, and power. You will leave knowing what yours is. And you will know how to use it — in your relationships, your work, your life.</p>
+      </div>
+    </div>
+    <a class="btn-ghost" href="https://calendly.com/medicine-women-collective/come-home-retreat-clarity-call" target="_blank">Discover if This Retreat is for You</a>
+  </div>
+</section>
+
+<!-- PHOTO STRIP -->
+<div class="photo-strip">
+  <div class="photo-cell" style="background-image: url('https://images.unsplash.com/photo-1609710228159-0fa9bd7c0827?w=600&q=80');"></div>
+  <div class="photo-cell" style="background-image: url('https://images.unsplash.com/photo-1542379653-b926a529191d?w=1000&q=80'); background-position: center 30%;"></div>
+  <div class="photo-cell" style="background-image: url('https://images.unsplash.com/photo-1573220606872-05de54699f0d?w=600&q=80');"></div>
+</div>
+
+<!-- DETAILS / INCLUDED -->
+<section class="details-section">
+  <div class="inner">
+    <div class="details-header">
+      <span class="section-eyebrow">The experience</span>
+      <h2>Everything you need.<br><em>Nothing you don't.</em></h2>
+      <p>Eight days, fully held. You arrive. We take care of everything else.</p>
+    </div>
+    <div class="included-grid">
+      <div class="included-item">
+        <div class="included-dot"></div>
+        <div>
+          <h4>All Meals & Nourishment</h4>
+          <p>Chef-prepared, nourishing, whole-food meals throughout the retreat. Dietary needs accommodated with love.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="included-dot"></div>
+        <div>
+          <h4>Breathwork & Sound Bath</h4>
+          <p>Transformative group breathwork sessions and sound bath healing designed to open and release at the deepest level.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="included-dot"></div>
+        <div>
+          <h4>Somatic Movement & Yoga</h4>
+          <p>Daily fascial maneuvers and restorative yoga to awaken the body and establish a grounded morning practice.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="included-dot"></div>
+        <div>
+          <h4>Sacred Ceremony</h4>
+          <p>Traditional Temazcal (sweat lodge) and Cacao Ceremony — trauma-informed, optional, and profoundly transformative.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="included-dot"></div>
+        <div>
+          <h4>Private & Group Coaching</h4>
+          <p>Personalized 1:1 and group coaching sessions before, during, and after the retreat to anchor your transformation.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="included-dot"></div>
+        <div>
+          <h4>Your Own Massage</h4>
+          <p>One full hour of restorative massage to melt away what the body has been holding. A sacred gift to yourself.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="included-dot"></div>
+        <div>
+          <h4>Aromatherapy Workshop</h4>
+          <p>Discover the healing power of essential oils. You'll create your own custom blends to carry your medicine home.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="included-dot"></div>
+        <div>
+          <h4>Nature Excursions & Play</h4>
+          <p>Costa Rica's breathtaking landscape as your playground — ocean, jungle, culture, and the deep medicine of nature.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="included-dot"></div>
+        <div>
+          <h4>Ground Transportation</h4>
+          <p>All transfers to and from the airport and throughout the retreat handled — so you arrive and be fully present.</p>
+        </div>
+      </div>
+      <div class="included-item">
+        <div class="included-dot"></div>
+        <div>
+          <h4>120-Day Community Access</h4>
+          <p>Free access to the Medicine Women Collective exclusive community for ongoing support after you return home.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="schedule-section">
+  <div class="inner">
+    <span class="section-eyebrow">Your journey</span>
+    <h2>Eight days that will <em>change everything.</em></h2>
+    <div class="schedule-item">
+      <div class="schedule-marker">
+        <div class="schedule-circle">01</div>
+      </div>
+      <div class="schedule-body">
+        <div class="schedule-date">January 30 · Arrival Day</div>
+        <div class="schedule-title">Welcome & Grounding</div>
+        <p class="schedule-desc">Arrive at the Castle of Oz and be welcomed with intention. Meet Karri, Samantha, and your fellow women. Receive your welcome gift, settle into your sacred accommodations, and join an evening grounding session to set intentions for the days ahead.</p>
+      </div>
+    </div>
+    <div class="schedule-item">
+      <div class="schedule-marker">
+        <div class="schedule-circle">02</div>
+      </div>
+      <div class="schedule-body">
+        <div class="schedule-date">January 31 – February 5 · Six Days of Transformation</div>
+        <div class="schedule-title">Empowerment, Healing & Rebirth</div>
+        <p class="schedule-desc">Each day weaves together somatic movement, breathwork, group coaching, creative workshops, chakra activations, ceremonial experiences, and nature immersion. Afternoons hold spacious integration time — you'll have room to rest, reflect, explore, and simply be.</p>
+      </div>
+    </div>
+    <div class="schedule-item">
+      <div class="schedule-marker">
+        <div class="schedule-circle">03</div>
+      </div>
+      <div class="schedule-body" style="padding-bottom: 0;">
+        <div class="schedule-date">February 6 · Departure Day</div>
+        <div class="schedule-title">Farewell & Integration</div>
+        <p class="schedule-desc">A final breakfast together — heartfelt, unhurried, sacred. You leave carrying your medicine: clarity, embodiment, sisterhood, and a renewed sense of who you truly are.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="location-section">
+  <div class="location-top">
+    <div class="location-img"></div>
+    <div class="location-copy">
+      <span class="section-eyebrow" style="color: var(--sage);">The setting</span>
+      <h2>Castle of Oz<br><em>Playa Hermosa, Costa Rica</em></h2>
+      <p>This is not a hotel. This is a <strong>sanctuary in the jungle</strong>, perched above the Pacific with panoramic ocean views, lush gardens alive with toucans and howler monkeys, and a luxury that feels like it exists outside of time.</p>
+      <p>The Castle of Oz was built for extraordinary experiences — and that is exactly what you will have. Wake to the sounds of the rainforest. Watch the sun set over the Pacific. Feel the land hold you as you do the inner work.</p>
+      <p><strong>This place is medicine in itself.</strong></p>
+      <div class="location-features">
+        <span class="loc-tag">Pacific Ocean Views</span>
+        <span class="loc-tag">Luxury Villa</span>
+        <span class="loc-tag">Private Chef</span>
+        <span class="loc-tag">Jungle Setting</span>
+        <span class="loc-tag">Costa Rica</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="inner">
+    <div class="testimonials-header">
+      <span class="section-eyebrow">What women are saying</span>
+      <h2>Real women.<br><em>Real transformation.</em></h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <p class="testimonial-body">"This retreat did not just help me heal — it helped me remember who I truly am. The coaching helped me uncover blocks I didn't realize I had, and the tools they gave us to navigate life with more ease, awareness, and grace have stayed with me ever since."</p>
+        <div class="testimonial-name">Elizabeth Hudson</div>
+        <div class="testimonial-tag">St. Thomas Retreat Participant</div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-body">"Signing up was a financial stretch for me. But now? I would do it again without hesitation. In fact, I'd pay double. The breathwork session alone was nothing short of transformational. I truly believe I made friendships that will last a lifetime."</p>
+        <div class="testimonial-name">Nicole Crifasi</div>
+        <div class="testimonial-tag">Soulful Purpose Retreat, April 2025</div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-body">"Sam and Karri are extraordinary guides. The breathwork opened me in ways I never expected. But what made it truly perfect was the people — from the inspiring women who led it to the beautiful souls who attended. It has left an imprint on my soul."</p>
+        <div class="testimonial-name">Kimberlynn Geary</div>
+        <div class="testimonial-tag">St. Thomas Retreat Participant</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOSTS -->
+<section class="hosts-section">
+  <div class="inner">
+    <span class="section-eyebrow" style="color: var(--sage);">Your guides</span>
+    <h2>Led by women who<br><em>have walked the path.</em></h2>
+    <p class="hosts-lead">
+      Karri and Samantha aren't just retreat hosts. They are medicine women —
+      trained healers, nurses, coaches, and ceremonialists who have devoted their lives
+      to holding space for women's transformation.
+    </p>
+    <div class="hosts-grid">
+      <div class="host-card">
+        <div class="host-img" style="background-image: url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&q=80'); background-size: cover; width: 100%; aspect-ratio: 3/4;"></div>
+        <div class="host-name">Karri</div>
+        <div class="host-title">Board Certified Nurse Coach · Aromatherapist · Reiki Practitioner · Yogi</div>
+        <p class="host-bio">Karri weaves clinical expertise with sacred healing arts. She guides women through group coaching, chakra activation, aromatherapy, and personalized wellness practices — helping you reconnect with the wisdom your body already carries.</p>
+      </div>
+      <div class="host-card">
+        <div class="host-img" style="background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=80'); background-size: cover; width: 100%; aspect-ratio: 3/4; background-position: center top;"></div>
+        <div class="host-name">Samantha</div>
+        <div class="host-title">Board Certified Nurse Coach · Somatic Practitioner · Breathwork Facilitator</div>
+        <p class="host-bio">Samantha's work lives in the body. As a trauma-informed somatic practitioner and licensed massage therapist, she creates the conditions for the nervous system to release what it has long been holding — making space for genuine, cellular-level change.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section">
+  <div class="inner">
+    <span class="section-eyebrow">Your investment</span>
+    <h2>This is the most important<br><em>investment you'll ever make.</em></h2>
+    <p class="pricing-sub">
+      Not in a course. Not in a certification. In <em>yourself</em>.
+    </p>
+    <div class="price-box">
+      <div class="price-tag">$4,999</div>
+      <div class="price-note">All-inclusive · Shared Occupancy &nbsp;·&nbsp; Private Room + $500</div>
+      <ul class="price-includes">
+        <li>8 days at Castle of Oz, Costa Rica</li>
+        <li>All meals by private Chef Diego</li>
+        <li>Daily somatic movement & yoga</li>
+        <li>Breathwork & sound bath sessions</li>
+        <li>Temazcal & Cacao ceremonies</li>
+        <li>One full-hour massage</li>
+        <li>Aromatherapy workshop & blends</li>
+        <li>Nature excursions & cultural experiences</li>
+        <li>Group & 1:1 coaching sessions</li>
+        <li>Ground transportation throughout</li>
+        <li>120-day community access</li>
+        <li>Welcome gift upon arrival</li>
+      </ul>
+    </div>
+
+    <div class="bonus-box">
+      <div class="bonus-label">Exclusive bonus</div>
+      <div class="bonus-title">Pre- & Post-Retreat Coaching Support</div>
+      <p class="bonus-desc">Your transformation begins before you board the plane. You'll receive two private 1:1 coaching sessions (one before, one after), plus four group coaching sessions to prepare you, deepen your connections, and integrate your experience as you return to real life.</p>
+    </div>
+
+    <p class="price-spots">⟡ Only 8 spots available ⟡ Intimate by design</p>
+    <a class="btn-primary" href="https://calendly.com/medicine-women-collective/come-home-retreat-clarity-call" target="_blank">Book a Clarity Call to Claim Your Spot</a>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section">
+  <div class="cta-bg"></div>
+  <div class="cta-overlay"></div>
+  <div class="cta-content">
+    <div class="ornament" style="margin-bottom: 40px;">
+      <div class="ornament-line"></div>
+      <div class="ornament-dot"></div>
+      <div class="ornament-line"></div>
+    </div>
+    <h2>Are you ready to<br><em>come hOMe?</em></h2>
+    <p>
+      You have been waiting for permission. This is it.
+      You are allowed to put yourself first. You are allowed to be seen.
+      You are allowed to live a life that feels as good on the inside as it looks on the outside.
+    </p>
+    <div class="cta-btns">
+      <a class="btn-primary" href="https://calendly.com/medicine-women-collective/come-home-retreat-clarity-call" target="_blank">Book My Clarity Call</a>
+      <a class="btn-ghost" href="mailto:info@medicinewomencollective.com">Email Us a Question</a>
+    </div>
+    <p class="cta-sub">January 30 – February 6, 2027 &nbsp;·&nbsp; Playa Hermosa, Costa Rica &nbsp;·&nbsp; 8 Spots Only</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo"><span>Medicine Women</span> Collective</div>
+  <div class="footer-links">
+    <a href="https://calendly.com/medicine-women-collective/come-home-retreat-clarity-call" target="_blank">Book a Call</a>
+    <a href="mailto:info@medicinewomencollective.com">Contact</a>
+    <a href="https://www.medicinewomencollective.com" target="_blank">Main Site</a>
+  </div>
+  <div class="footer-copy">© 2026 Medicine Women Collective · All Rights Reserved</div>
+</footer>
+
+</body>
+</html>
